@@ -1,0 +1,10 @@
+[user]
+	name = Eddy Zagabe
+	email = zagabe.ed@gmail.com
+[core]
+	editor = emacs
+[alias]
+	last = log -5 HEAD
+	display = !gource
+	co = checkout
+	all = log --graph --all

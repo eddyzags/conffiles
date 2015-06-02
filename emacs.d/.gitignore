@@ -1,0 +1,10 @@
+*elc
+.DS_Store
+starter-kit-2.*
+*.tar
+backups/*
+recentf
+places
+ido.last
+.smex-items
+auto-save-list
