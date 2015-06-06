@@ -1,0 +1,8 @@
+# Org mode file
+*.org
+
+# C object files
+*.o
+
+# Emacs tmp files
+*~

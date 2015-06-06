@@ -28,3 +28,7 @@
 (global-set-key (kbd "M-`") 'clang-format-buffer)
 (add-hook 'c-mode-common-hook 'google-set-c-style)
 (add-hook 'c++-mode-hook 'linum-mode)
+
+(require 'package)
+(add-to-list 'package-archives '("org", "http://orgmode.org/elpa/") t)
+(eval-after-load "org" '(require 'ox-md nil t))
