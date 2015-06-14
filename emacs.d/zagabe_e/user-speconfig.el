@@ -32,3 +32,4 @@
 (require 'package)
 (add-to-list 'package-archives '("org", "http://orgmode.org/elpa/") t)
 (eval-after-load "org" '(require 'ox-md nil t))
+(setq org-export-with-sub-superscripts nil)

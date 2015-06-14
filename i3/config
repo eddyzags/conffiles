@@ -141,3 +141,8 @@ bar {
 
 bindsym $mod+i exec i3lock
 new_window 1pixel
+
+# Sound binding (Config for Poker 2)
+bindsym XF86AudioLowerVolume exec amixer set Master 5-
+bindsym XF86AudioRaiseVolume exec amixer set Master 5+ unmute
+bindsym XF86AudioMute exec amixer set Master toggle
