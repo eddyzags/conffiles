@@ -74,7 +74,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # focus the child container
-#bindcode $mod+d focus child
+bindcode $mod+d focus child
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -146,3 +146,9 @@ new_window 1pixel
 bindsym XF86AudioLowerVolume exec amixer set Master 5-
 bindsym XF86AudioRaiseVolume exec amixer set Master 5+ unmute
 bindsym XF86AudioMute exec amixer set Master toggle
+
+# Enable floating mode for all QNetSoul windows
+for_window [class="QNetSoul"] floating enable
+
+# Enable floating mode for all Telegram windows
+for_window [class="Telegram"] floating enable
