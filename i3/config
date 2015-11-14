@@ -139,7 +139,8 @@ bar {
         status_command i3status
 }
 
-bindsym $mod+i exec i3lock
+bindsym $mod+i exec i3lock -i ~/Pictures/woods_sized.png -t
+
 new_window 1pixel
 
 # Sound binding (Config for Poker 2)

@@ -8,4 +8,4 @@
 	display = !gource
 	co = checkout
 	all = log --graph --all
-        st = status
+

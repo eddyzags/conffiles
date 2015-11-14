@@ -33,3 +33,13 @@
 (add-to-list 'package-archives '("org", "http://orgmode.org/elpa/") t)
 (eval-after-load "org" '(require 'ox-md nil t))
 (setq org-export-with-sub-superscripts nil)
+
+(add-hook 'yaml-mode)
+(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
+
+(add-hook 'jinja2-mode)
+(add-tolist 'auto-mode-alist' ("\\.j2$" . jinja2-mode))
+
+(add-to-list 'load-path' "./dockerfile-mode.el")
+(require 'dockerfile-mode)
+(add-to-list 'auto-most-alist '("Dockerfile\\'" . dockerfile-mode))
