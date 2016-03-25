@@ -1,6 +1,4 @@
-###################
-# Constants Color #
-###################
+# Constants
 
 set $mod Mod4
 
@@ -25,10 +23,6 @@ set $lblue #81a2be
 set $lpurple #b294bb
 set $lteal #8abeb7
 
-set $termbg #1e1e20
-set $termfg #e0d8d1
-set $termfoc   #000000
-
 
 #workspace labels
 set $ws1 "1"
@@ -42,14 +36,15 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
-#########################
-# General Configuration #
-#########################
+
+
+# General Configuration
 
 floating_modifier Ctrl
 font pango:Segoe UI 12
 for_window [class="^.*"] border pixel 1
-
+gaps inner 75
+gaps outer 0
 #smart_borders yes
 focus_follows_mouse no
 focus_on_window_activation focus
@@ -65,9 +60,7 @@ bindsym $mod+q kill
 
 #launch rofi
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -dmenu -p "run: " -lines 3 -eh 2 -width 50 -padding 400 -bw 0 -bc "$bgtrans" -bg "$bgtrans" -fg "$white" -hlbg "$bgtrans" -hlfg "$bgdark" -font "Segoe UI 50" -hide-scrollbar'
-#bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -show -dmenu -p "run: " -lines 3 -eh 2 -width 1000 -padding 20'
-
-bindsym $mod+d exec --no-startup-id ~/.i3/rofi.sh
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -show -dmenu -p "run: " -lines 3 -eh 2 -width 1000 -padding 20'
 
 #bindsym --release Super_L exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -dmenu -p "run: " -lines 3 -eh 2 -width 50 -padding 200 -bw 0 -bc "$bgtrans" -bg "$bgtrans" -fg "$white" -hlbg "$bgtrans" -hlfg "$bgdark" -font "Segoe UI 50" -hide-scrollbar'
 
@@ -188,53 +181,27 @@ mode "  " {
   client.unfocused        $bgdark  $bgdark    $white  $bgdark
   client.urgent           $red     $red       $white  $red
 
+# Bar
+  bar {
+    status_command i3blocks -c ~/.config/i3/i3blocks.conf
+    position top
+    strip_workspace_numbers yes
+    tray_output none
 
-###########
-#  i3bar  #
-###########
-
-bar {
-        status_command i3status -c ~/.i3/i3status.conf
-        position top
-#        strip_workspace_numbers yes
-        tray_output primary
-        font pango: Source Code Pro Semibold 10
-
-        colors{
-                background  $termbg
-                statusline  #8FA388
-                separator   #8FA388
-                #separator_symbol ":|:"
-
-                #selection          #border #fill    #text
-                focused_workspace   #8FA388 #1D1D1D  #8FA388
-                active_workspace    #1D2426 #1D1D1D  #8FA388
-                inactive_workspace  $termbg #1D1D1D  #8FA388
-                urgent_workspace    #FFFFFF #1D1D1D  #8FA388
-                binding_mode        $termfg $termbg  $termfg
-         }
+colors{
+background $bgdark
+#                   border   background text
+focused_workspace   $blue    $blue      $white
+active_workspace    $red     $red       $white
+inactive_workspace  $bgdark  $bgdark    $white
+urgent_workspace    $red     $red       $white
+binding_mode        $purple  $purple    $white
+}
 
 #possible rofi?
 #bindsym button3 exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -dmenu -p " run: " -lines 5 -eh 2 -width 100 -padding 800 -bw 0 -bc "$bgtrans" -bg "$bgtrans" -fg "$white" -hlbg "$bgtrans" -hlfg "$bgdark" -font "Segoe UI 50" -hide-scrollbar'
 
 }
-
-##################
-# i3-gasp config #
-##################
-
-#gaps inner 75
-#gaps outer 0
-
-gaps inner 30
-gaps outer 15
-
-smart_borders no_gaps
-
-
-###################
-#  Custom config  #
-###################
 
 
 # Sound binding (Config for Poker 2)
